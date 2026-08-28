@@ -1,0 +1,11 @@
+<div ng-controller="LoginFormController as login" style="height: 100vh; width: 100vw; background-color: #f5f6ff; margin: 0; padding: 0; position: absolute; top: 0; left: 0; z-index: 9999;">
+    <react-component 
+        name="LoginPage" 
+        props="{ 
+            onLogin: login.handleLogin, 
+            onResetPassword: login.handleResetPassword,
+            isLoading: login.isLoading, 
+            errorMessage: login.authMsg 
+        }">
+    </react-component>
+</div>

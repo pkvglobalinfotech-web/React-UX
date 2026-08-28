@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Patient Services</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/css/patientservices.css">
+</head>
+<style>
+.patientsearchprofilebg .table-uigrid.ui-grid .ui-grid-cell{min-width:20%;}.ui-grid-header-canvas,.ui-grid-header-cell-wrapper{width: 100% !important;}.patientsearchprofilebg .table-uigrid.ui-grid .ui-grid-cell{height:90px;}.table-uigrid.ui-grid .ui-grid-cell-contents {padding: 14px 7px;text-align: center;}.table-uigrid.ui-grid .ui-grid-column-menu-button{display: none;}.ui-grid-cell-contents.ng-binding.ng-scope,.ui-grid-cell-contents.ng-scope.ng-isolate-scope{margin: 17px auto;}@media (min-width: 1360px) {#patientsearchheight .ui-grid-viewport{height:200px ;min-height:200px;}}@media (min-width:1200px){#patientsearchheight .ui-grid-viewport{height: 195px ;min-height:150px;}}
+</style>
+    <body class="patientservices_bg">
+    <!--
+      Migrated to React 2026-08-21: this whole screen is now
+      <react-component name="RegisteredPatientsScreen">, a pure presentational port of
+      the markup that used to live here (search box, ui-grid results table, pagination,
+      back/home/logout nav). All logic -- getList()'s real
+      'registration/patient/GetPatients' API call, filter state, pagination state --
+      stays in registeredpatients.js's (hollowed) PatientServicesalreadyController,
+      reached via handleReactAction. See REACT_MIGRATION_GUIDE.md. Original markup
+      preserved above this comment in git history for reference. NOTE (unchanged from
+      before this migration): this screen is not currently linked from any reachable
+      ui-router state -- see docs/ANGULAR_REACT_MIGRATION_AUDIT.md.
+    -->
+    <react-component name="RegisteredPatientsScreen" props="{ reactProps: reactProps, onAction: handleReactAction }"></react-component>
+</body>
+
+</html>

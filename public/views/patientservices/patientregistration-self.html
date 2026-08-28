@@ -1,0 +1,23 @@
+<style>
+    #drhms-patinet-search-box .custom-popup-wrapper {
+        margin-left: -300px;
+    }
+</style>
+<!--
+  Migrated to React 2026-08-21: this whole screen is now
+  <react-component name="PatientRegistrationSelfScreen">, a full presentational port of
+  the markup that used to live here (patient search, referral search, date range,
+  MRN type filter, results grid, pagination, print/excel/back toolbar). All logic --
+  getList()'s real 'registration/patient/GetPatients' call, excelDownload, print,
+  backtoReport, handleEvents()'s edit-row navigation to app.patientregistration-form,
+  referralcontrolconfig, gridConfig, initLookup -- stays in
+  patientregistration-self.js's (hollowed) PatientRegisterListReportController, reached
+  via handleReactAction. The patient-search and referral-search boxes reuse the real
+  search endpoints ('registration/Patient/GetMinPatientSearch',
+  'generalmaster/referral/GetReferrals') copied verbatim from the already-working
+  <patientsearch>/<autosearch> widgets. See REACT_MIGRATION_GUIDE.md. Original markup
+  preserved above this comment in git history for reference. NOTE: per
+  docs/ANGULAR_REACT_MIGRATION_AUDIT.md this state (app.patientregistration-list) is not
+  currently linked from any reachable ui-router state in this codebase.
+-->
+<react-component name="PatientRegistrationSelfScreen" props="{ reactProps: reactProps, onAction: handleReactAction, onPatientSearch: searchPatientForRegList, onPatientSelect: selectPatientForRegList, onReferralSearch: searchReferralForRegList, onReferralSelect: selectReferralForRegList }"></react-component>

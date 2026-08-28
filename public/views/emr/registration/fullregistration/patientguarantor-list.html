@@ -1,0 +1,11 @@
+<!-- Fully reimplemented in React (PatientGuarantorListScreen), except <patientbanner>
+     which stays native (real, shared, async-fetching directive -- REUSABLE SUB-WIDGET
+     PATTERN, same treatment as the Doctor <autosearch> on registrationcumvisit.html).
+     See patientguarantor-list.js for the full list of disclosed pre-existing quirks
+     preserved as-is (dead Add button/target state, dead row-selection picker mode,
+     the untranslated-key alert bug) and src/react-components/PatientGuarantorListScreen.tsx
+     for fidelity notes. -->
+<div ng-if="currentcontext.ismodal">
+    <patientbanner patientid="currentcontext.patientid" delegatefn="setBannerDelegate(cmp)"></patientbanner>
+</div>
+<react-component name="PatientGuarantorListScreen" props="{ reactProps: reactProps, onAction: handleReactAction }"></react-component>

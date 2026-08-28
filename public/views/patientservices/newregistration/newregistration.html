@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Patient Services</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="app/css/patientservices.css">
+    <link href="app/css/regbilling.css" rel="stylesheet">
+</head>
+<body class="patientservices_bg">
+<!--
+  Migrated to React 2026-08-21: this whole screen is now
+  <react-component name="NewRegistrationScreen">, a full presentational port of the
+  Patient Registration Form (photo capture, personal details, age/DOB, address, contact,
+  communication preferences). All logic -- initLookup/getItem/getPatientProfilePic/
+  getEncounters real API calls, save()/saveItem()'s real validation and
+  AddPatient/UpdatePatient calls (incl. file-upload branch), fillGenderInfo/
+  calculateAge/calculateDOB business rules, openWebCam's real webcam-modal, and the
+  Google-Places address handler -- stays in newregistration.js's (hollowed)
+  PatientServicesNewRegController, reached via handleReactAction. See
+  REACT_MIGRATION_GUIDE.md. Original markup preserved above this comment in git history
+  for reference. Confirmed reachable: patientservices.html's real "New Registration"
+  card -> self.selfnewregistration -> this screen.
+-->
+<react-component name="NewRegistrationScreen" props="{ reactProps: reactProps, onAction: handleReactAction }"></react-component>
+</body>
+
+</html>

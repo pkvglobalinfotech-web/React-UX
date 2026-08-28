@@ -1,0 +1,20 @@
+<!-- Migrated Doctor Dashboard Top Section to React -->
+<div id="cemr_dashboard" style="width: 100%;">
+    <react-component 
+        name="DoctorDashboardTopSection" 
+        props="{ 
+            items: Items, 
+            permissions: permissions,
+            tablesData: tablesData,
+            onNavigate: handleNavigation
+        }">
+    </react-component>
+    
+    <!-- Legacy Scheduler remains intact below -->
+    <div class="container-fluid filter" id="appoinmentsheight">
+        <div class="col-sm-12 cal">
+            <jqx-scheduler jqx-settings="settings" id="scheduler"></jqx-scheduler>
+        </div>
+        <div class="fooder-bgs"></div>
+    </div>
+</div>

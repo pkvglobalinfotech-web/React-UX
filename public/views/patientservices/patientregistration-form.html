@@ -1,0 +1,18 @@
+<!--
+  Migrated to React 2026-08-21: this whole partial is now
+  <react-component name="PatientRegistrationFormScreen">, a full presentational port
+  of the Patient Registration Form (edit/view mode reached from
+  patientregistration-self's edit-row navigation to app.patientregistration-form).
+  All logic -- initLookup/getItem/getPatientProfilePic/getEncounters real API calls,
+  saveAndApprove()/saveItem()'s real validation and AddPatient/UpdatePatient calls
+  (incl. the file-upload branch and the "patient already exists" negative-Id branch),
+  fillGenderInfo/calculateAge/calculateDOB business rules, openWebCam's real
+  webcam-modal, backToList's navigation to app.patientregistration-list, and the
+  Google-Places address handler -- stays in patientregistration-form.js's (hollowed)
+  PatientRegisterFormReportController, reached via handleReactAction. See
+  REACT_MIGRATION_GUIDE.md. Original markup preserved above this comment in git
+  history for reference. Confirmed reachable: patientregistration-self.html's real
+  edit/view row action (handleEvents 'edit'/'view') -> app.patientregistration-form
+  (id + patientid params) -> this screen.
+-->
+<react-component name="PatientRegistrationFormScreen" props="{ reactProps: reactProps, onAction: handleReactAction }"></react-component>
