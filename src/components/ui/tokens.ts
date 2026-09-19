@@ -11,51 +11,55 @@
 // ─────────────────────────────────────────────────────────────
 export const colors = {
   // Brand — Primary Blue
-  primary:       '#2563eb',
-  primaryHover:  '#1d4ed8',
-  primaryActive: '#1e40af',
-  primaryLight:  '#eff6ff',
-  primaryMid:    '#bfdbfe',
+  // Brand — Primary Blue
+ primary:       '#844fc1',
+  primaryHover:  '#723fb0',
+  primaryActive: '#60319a',
+  primaryLight:  '#f3ebfb',
+  primaryMid:    '#d6bdf2',
 
   // Brand — Accent Indigo
   accent:        '#4f46e5',
   accentHover:   '#4338ca',
   accentLight:   '#eef2ff',
 
-  // Brand — Gold / Amber (secondary brand, used for highlights)
+  // Brand — Gold / Amber
   gold:          '#d97706',
   goldHover:     '#b45309',
   goldLight:     '#fef3c7',
 
   // Sidebar & Shell
-  sidebarBg:     '#0a0f1d',
-  sidebarTop:    '#0a0f1d',
-  sidebarBottom: '#1e293b',
-  sidebarText:   'rgba(255,255,255,0.82)',
-  sidebarMuted:  'rgba(255,255,255,0.45)',
-  sidebarBorder: 'rgba(255,255,255,0.08)',
-  sidebarActive: 'rgba(37,99,235,0.20)',
-  sidebarActiveBar: '#2563eb',
+  sidebarBg:     '#0f172a', // Slate 900
+  sidebarTop:    '#1e293b', // Slate 800
+  sidebarBottom: '#0f172a', // Slate 900
+  sidebarText:   '#94a3b8', // Slate 400
+  sidebarMuted:  '#64748b', // Slate 500
+  sidebarBorder: '#334155', // Slate 700
+  sidebarActive: 'rgba(56, 189, 248, 0.12)',
+  sidebarActiveBar: '#38bdf8', // Sky 400
 
   // Neutrals — Slate scale
-  textMain:      '#0f172a',   // slate-900
-  textBody:      '#1e293b',   // slate-800
-  textMuted:     '#475569',   // slate-600
-  textSubtle:    '#94a3b8',   // slate-400
-  textDisabled:  '#cbd5e1',   // slate-300
+  textMain:      '#0f172a',
+  textBody:      '#1e293b',
+  textMuted:     '#475569',
+  textSubtle:    '#94a3b8',
+  textDisabled:  '#cbd5e1',
   textInverse:   '#ffffff',
 
-  border:        '#e2e8f0',   // slate-200
-  borderStrong:  '#cbd5e1',   // slate-300
+  border:        '#e2e8f0',
+  borderStrong:  '#cbd5e1',
   borderFocus:   '#2563eb',
 
   surface:       '#ffffff',
-  surfaceMuted:  '#f8fafc',   // slate-50
-  surfaceSunken: '#f1f5f9',   // slate-100
+  surfaceMuted:  '#f8fafc',
+  surfaceSunken: '#f1f5f9',
   surfaceRaised: '#ffffff',
 
   overlay:       'rgba(15,23,42,0.5)',
   overlayLight:  'rgba(15,23,42,0.08)',
+
+  // Semantics & Charts retain system standards...
+
 
   // Semantic — Status colors
   success:       '#10b981',   // Emerald-500

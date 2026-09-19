@@ -1,140 +1,45 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="angularApp">
+<html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="{{app.description}}">
-  <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
-  <title href="img/logo123.png.">GenericSoft</title>
+  <meta name="description" content="MediFlow Hospital Management System">
+  <title>MediFlow HIMS</title>
   <base href="/">
 
-  <!-- Bootstrap styles-->
-  <link rel="stylesheet" href="css/bootstrap.css" data-ng-if="!app.layout.isRTL">
-  <link rel="stylesheet" href="css/bootstrap-rtl.css" data-ng-if="app.layout.isRTL">
-  <!-- Application styles-->
-  <link rel="stylesheet" href="css/app.css" data-ng-if="!app.layout.isRTL">
-  <link rel="stylesheet" href="css/app-rtl.css" data-ng-if="app.layout.isRTL">
-  <link rel="stylesheet" href="css/bootstrap.vertical-tabs.min.css">
-  <link rel="stylesheet" href="https://cdn.lineicons.com/2.0/LineIcons.css">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css"
-    integrity="sha512-d0olNN35C6VLiulAobxYHZiXJmq+vl+BGIgAxQtD5+kqudro/xNMvv2yIHAciGHpExsIbKX3iLg+0B6d0k4+ZA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css"
-    integrity="sha512-pZlKGs7nEqF4zoG0egeK167l6yovsuL8ap30d07kA5AJUq+WysFlQ02DLXAmN3n0+H3JVz5ni8SJZnrOaYXWBA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css"
-    integrity="sha512-TzeemgHmrSO404wTLeBd76DmPp5TjWY/f2SyZC6/3LsutDYMVYfOx2uh894kr0j9UM6x39LFHKTeLn99iz378A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/regular.min.css"
-    integrity="sha512-TzeemgHmrSO404wTLeBd76DmPp5TjWY/f2SyZC6/3LsutDYMVYfOx2uh894kr0j9UM6x39LFHKTeLn99iz378A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- Themes-->
+  <!-- Favicon -->
   <link rel="shortcut icon" href="img/smalllogo.png" />
-  <link rel="stylesheet" ng-href="{{app.layout.theme}}" data-ng-if="app.layout.theme">
 
-  <link rel="stylesheet" href="vendor/toastr/angular-toastr.min.css">
-  <!--<link rel="stylesheet" href="vendor/fullcalendar/fullcalendar.css"/>-->
+  <!-- Core Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Unified FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Application Styles -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
   <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/inventory.css">
-  <!-- <link href="//db.onlinewebfonts.com/c/1e7e97d0da36ea1b00a66348a43dfb26?family=Proxima+Nova+Th" rel="stylesheet" type="text/css"/> -->
   <link rel="stylesheet" href="css/custom-theme.css">
-  <link rel="stylesheet" href="css/billing-pharmacy-customs.css">
   <link rel="stylesheet" href="css/react-design-system.css">
-  <link rel="stylesheet" href="css/print-format-system.css">
-  <link rel="stylesheet" href="vendor/angular-table-resize.css">
-  <link rel="stylesheet" href="vendor/fontawesome5/css/fontawesome.min.css">
-  <link rel="stylesheet" href="vendor/fontawesome5/css/fontawesome.css">
-  <link rel="stylesheet" href="vendor/fontawesome5/css/all.css">
-  <link rel="stylesheet" href="vendor/fontawesome5/css/all.min.css">
-  <link rel="stylesheet" href="vendor/fontawesome6/css/fontawesome.min.css">
-  <link rel="stylesheet" href="vendor/fontawesome6/css/fontawesome.css">
-  <link rel="stylesheet" href="vendor/fontawesome6/css/all.css">
-  <link rel="stylesheet" href="vendor/fontawesome6/css/all.min.css">
-  <!-- <link rel="stylesheet" href="vendor/proximanova/css/proxinova.min.css"> -->
-  <link rel="stylesheet" href="css/fonts/icofont.css">
-  <link rel="stylesheet" href="css/fonts/icofont.ttf">
-  <link rel="stylesheet" href="css/fonts/icofont.woff2">
-  <link rel="stylesheet" href="vendor/jqwidgets/styles/jqx.base.css" type="text/css" />
-  <!-- Boostrap 3 Jquery -->
+
+  <!-- Legacy Dependencies (Retained for AngularJS Compatibility) -->
   <script src="js/base.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
   <script src="js/app-config.js"></script>
-  <script src="js/hims-states.js"></script>
-  <script src="js/emr-states.js"></script>
-  <script src="js/lis-states.js"></script>
-  <script src="js/linenandlaundry-states.js"></script>
-  <!-- <script src="js/custom-states.js"></script> -->
-
-  <script src="vendor/angular-table-resize.js"></script>
-  <script src="vendor/moment/moment.min.js"></script>
-  <script src="vendor/ng-lodash/ng-lodash.min.js"></script>
-  <script src="vendor/pdfmake/pdfmake.min.js"></script>
-  <script src="vendor/pdfmake/vfs_fonts.js"></script>
-  <script src="vendor/pdfmake/html2canvas.min.js"></script>
-  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <!-- full calendar scripts starts -->
-  <!--<script src="vendor/fullcalendar/lib/jquery.min.js"></script>
-    <script src="vendor/fullcalendar/fullcalendar.min.js"></script>
-    <script src="vendor/fullcalendar/gcal.js"></script>
-    <script src="vendor/ui-calendar/calendar.js"></script>-->
-  <!-- full calendar scripts ends -->
-  <!-- jqwidgets -->
-  <script type="text/javascript" src="vendor/jqwidgets/jqxcore.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxbuttons.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxscrollbar.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxdata.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxdate.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxscheduler.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxscheduler.api.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxdatetimeinput.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxmenu.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxcalendar.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxtooltip.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxwindow.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxcheckbox.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxlistbox.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxdropdownlist.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxnumberinput.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxradiobutton.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxinput.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/globalization/globalize.js"></script>
-  <script type="text/javascript" src="vendor/jqwidgets/jqxangular.js"></script>
-  <script src="vendor/toastr/angular-toastr.tpls.min.js"></script>
-  <script src="vendor/ngViewBuilder/ngViewBuilder.js"></script>
-  <script src="vendor/ng-fab-form/ng-fab-form.js"></script>
-  <script src="vendor/highcharts7/code/highcharts.js"></script>
-  <script src="vendor/highcharts7/code/modules/exporting.js"></script>
-  <script src="vendor/highcharts7/code/modules/export-data.js"></script>
-  <script src="vendor/amcharts/amcharts.js"></script>
-  <script src="vendor/amcharts/serial.js"></script>
-  <script src="vendor/amcharts/gantt.js"></script>
-  <script src="vendor/ng-idle/angular-idle.min.js"></script>
-  <script src="vendor/imagemap/jquery.imagemapster.1.1.3b5.js"></script>
-  <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDwN9N3C8bCj8EyogjKJTSD36pO0P3YZq0&libraries=geometry,places&loading=async"></script>
-  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.1/build/qrcode.min.js"></script>
 </head>
 
-<body
-  data-ng-class="{ 'layout-fixed' : app.layout.isFixed, 'aside-collapsed' : app.layout.isCollapsed, 'layout-boxed' : app.layout.isBoxed, 'layout-fs': app.useFullLayout, 'hidden-footer': app.hiddenFooter, 'layout-h': app.layout.horizontal, 'aside-float': app.layout.isFloat, 'offsidebar-open': app.offsidebarOpen, 'aside-toggled': app.asideToggled, 'aside-collapsed-text': app.layout.isCollapsedText}"
-  ng-controller="$viewBuilderController">
-  <!--<div data-preloader></div>-->
-  <div data-ui-view="" data-autoscroll="false" class="wrapper"></div>
+<body class="layout-fixed">
+  <!-- React Mount Root / UI-View Fallback Container -->
+  <div id="root" class="wrapper">
+    <div data-ui-view="" data-autoscroll="false" class="wrapper"></div>
+  </div>
+
+  <!-- Vite React Main Entry -->
   <script type="module" src="/src/main.tsx"></script>
 </body>
-<script>
-  $(".viewbuttom").click(function () {
-    $(this).closest('.list-group-item').find('.details').toggleClass("mains");
-  });
-</script>
 
 </html>

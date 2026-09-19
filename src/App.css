@@ -35,6 +35,23 @@
   --font-modern: "Poppins", "Inter", sans-serif;
 }
 
+:root {
+  /* Sidebar Backgrounds */
+  --sidebar-bg: #0f172a;          /* Slate 900 */
+  --sidebar-top: #1e293b;         /* Slate 800 */
+  --sidebar-bottom: #0f172a;      /* Slate 900 */
+  --sidebar-border: #334155;      /* Slate 700 */
+
+  /* Text & Icons */
+  --sidebar-text: #94a3b8;        /* Slate 400 */
+  --sidebar-muted: #64748b;       /* Slate 500 */
+  
+  /* Active / Accent States */
+  --sidebar-active: #1e3a8a;      /* Dark Blue Accent */
+  --sidebar-active-bar: #38bdf8;  /* Sky Blue Glow/Indicator */
+  --danger: #f87171;              /* Soft Coral/Red */
+}
+
 /* Reusable Premium Utility Classes */
 .premium-glass-panel {
   background: var(--glass-bg);

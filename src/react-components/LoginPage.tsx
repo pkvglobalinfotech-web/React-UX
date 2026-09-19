@@ -47,6 +47,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
   const passwordRef = useRef<HTMLInputElement>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
+    console.log('LoginPage: handleSubmit called');
     e.preventDefault();
     setTouched({ username: true, password: true });
     if (!username.trim() || !password.trim()) return;
@@ -370,7 +371,7 @@ export const LoginPage: React.FC<LoginPageProps> = ({
                 ) : (
                   <>
                     <i className="fa-solid fa-right-to-bracket" style={{ fontSize: '14px' }} />
-                    Sign in
+                    Log in
                   </>
                 )}
               </button>

@@ -7,20 +7,24 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "NODE_OPTIONS='--max-old-space-size=768' vite",
+    "dev": "set NODE_OPTIONS=--max-old-space-size=768&& vite",
     "build": "npm run build-api && tsc -b && vite build",
     "build-api": "cd api && npm run build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start-api": "cd api && node --max-old-space-size=512 dist/dev/index.js",
-    "start": "concurrently --kill-others-on-fail \"npm run build-api && npm run start-api\" \"wait-on tcp:2012 && npm run dev\"",
+    "start-api": "cd api && node --max-old-space-size=512 dist/dev/src/index.js",
+    "start": "concurrently --kill-others-on-fail \"npm run start-api\" \"wait-on tcp:2012 && npm run dev\"",
     "sonar": "dotenv -e .env -- sonar-scanner"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.12.0",
+    "axios": "^1.20.0",
     "quill": "^2.0.3",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "recharts": "^3.10.1"
+    "react-redux": "^9.3.0",
+    "recharts": "^3.10.1",
+    "redux-saga": "^1.5.1"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
