@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions } from '../../../Core/Index';
 import { BaseRequest, ApiRequest, ApiResponse } from '../../../Common/Index';
 import { DynamicQRLogInstance, DynamicQRLogAttributes } from '../Model/Interface/Index';
 import { DynamicQRLogFilters } from '../Common/Filters.e';
-import * as request from 'request';
+import request from 'request';
 import * as crypto from 'crypto';
 // import * as fs from 'fs';
 // import * as path from 'path';

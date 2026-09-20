@@ -68,7 +68,7 @@ export class SectionMasterBo extends BaseBo<SectionMasterInstance, SectionMaster
                             } else {
                                 paramArr = [param.Value];
                             }
-                            where['SectionNoteTypeId'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                            where['SectionNoteTypeId'] = { '$like': '%' + ( param.Value || '') + '%' };
                         }
                         break;
                     default:
@@ -95,12 +95,12 @@ export class SectionMasterBo extends BaseBo<SectionMasterInstance, SectionMaster
     }
 
     public async GetCategories(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo(this.Models.SectionCategoryMap, 'SectionId', 'CategoryId', super.Request);
+        let mapbo = new MapBo(this.Models.SectionCategoryMap, 'SectionId', 'CategoryId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
 
     public async MapCategories(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.SectionCategoryMap, 'SectionId', 'CategoryId', super.Request);
+        let mapbo = new MapBo(this.Models.SectionCategoryMap, 'SectionId', 'CategoryId', this.Request);
         return await mapbo.Manage(req.Data);
     }
 

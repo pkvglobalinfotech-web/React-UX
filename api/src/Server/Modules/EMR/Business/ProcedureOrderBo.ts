@@ -569,7 +569,7 @@ export class ProcedureOrderBo extends BaseBo<ProcedureOrderInstance, ProcedureOr
                         }
                         break;
                     case ProcedureOrderFilters.BillNumber:
-                        (where as any)['BillNumber'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (where as any)['BillNumber'] = { [Op.like]: '%' + ( param.Value || '') + '%' };
                         break;
                     case ProcedureOrderFilters.IsDirectBill:
                         where['IsDirectBill'] = param.Value;
@@ -689,7 +689,7 @@ export class ProcedureOrderBo extends BaseBo<ProcedureOrderInstance, ProcedureOr
                         where['BillingStatusId'] = param.Value;
                         break;
                     case ProcedureOrderFilters.BillNumber:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case ProcedureOrderFilters.OrderTypeId:
                         where['OrderTypeId'] = param.Value;

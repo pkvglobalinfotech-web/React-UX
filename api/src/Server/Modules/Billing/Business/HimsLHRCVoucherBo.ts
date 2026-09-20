@@ -8,7 +8,7 @@ import { SequenceKeys } from '../../General/Common/Sequence.s';
 import { BoFactory } from '../../Base/Business/Index';
 import * as voucherbo from '../Business/Index';
 import { join } from 'path';
-// import * as moment from 'moment';
+// import moment from 'moment';
 
 export class LHRCVoucherBo extends BaseBo<LHRCVoucherInstance, LHRCVoucherAttributes> {
     public async AddLHRCVoucher(req: BaseRequest): Promise<number> {

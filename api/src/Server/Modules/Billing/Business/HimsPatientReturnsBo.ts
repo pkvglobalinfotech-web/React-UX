@@ -574,7 +574,7 @@ export class PatientReturnsBo extends BaseBo<PatientReturnsInstance, PatientRetu
     }
 
     public async UpdateStaffBillReturns(req: BaseRequest): Promise<boolean> {
-        let seqidentifier = SequenceKeys.PharmacyReturnStore;
+        let seqidentifier: string = SequenceKeys.PharmacyReturnStore;
         if (req.Data.Header.Id > 0 && !req.Data.Header.ReturnNumber && req.Data.Header.PatientBillStatusId === 3) {
             if (req.Data.Header.StoreTypeId === 1) {
                 if (req.Data.Header.StoreSubTypeId === 2) {
@@ -747,7 +747,7 @@ export class PatientReturnsBo extends BaseBo<PatientReturnsInstance, PatientRetu
                         where['ReturnDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientReturnsFilters.PatReturnNr:
-                        where['ReturnNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['ReturnNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientReturnsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -968,7 +968,7 @@ export class PatientReturnsBo extends BaseBo<PatientReturnsInstance, PatientRetu
                         where['ReturnDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientReturnsFilters.PatReturnNr:
-                        where['ReturnNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['ReturnNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientReturnsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },

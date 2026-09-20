@@ -75,7 +75,7 @@ export class PatientDispenseReturnBo extends BaseBo<PatientDispenseReturnInstanc
                 await patientbillBO.AddPatientDispenseReturnBill(PatientDispenseReturnId, patientReturnId, req);
             }
 
-            let seqidentifier = SequenceKeys.DispenseReturnStore;
+            let seqidentifier: string = SequenceKeys.DispenseReturnStore;
             let dispretIdentifier: any = null;
             if (req.Data.Header.DispenseReturnStatusId === 2) {
                 if (req.Data.Header.StoreTypeId === 1) {
@@ -172,7 +172,7 @@ export class PatientDispenseReturnBo extends BaseBo<PatientDispenseReturnInstanc
                 await patientbillBO.AddPatientDispenseReturnBill(PatientDispenseReturnId, patientReturnId, req);
             }
 
-            let seqidentifier = SequenceKeys.DispenseReturnStore;
+            let seqidentifier: string = SequenceKeys.DispenseReturnStore;
             let dispretIdentifier: any = null;
             if (req.Data.Header.DispenseReturnStatusId === 2) {
                 if (req.Data.Header.StoreTypeId === 1) {

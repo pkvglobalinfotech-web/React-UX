@@ -16,9 +16,8 @@ export class OtDashboardBo extends BaseBo<OtRequestInstance, OtRequestAttributes
     public async GetOtDashboardOptions(req: BaseRequest): Promise<any> {
         let infoResponses: any = {};
 
-        // Add null/undefined checks
-        let filterAttributes = req?.Attributes;
-        let requestKeys: any = req?.Data?.Keys;
+        let filterAttributes = req.Attributes || {};
+        let requestKeys: any[] = req.Data?.Keys || [];
 
         // Check if requestKeys exists and is an array
         if (!requestKeys || !Array.isArray(requestKeys)) {
@@ -27,32 +26,29 @@ export class OtDashboardBo extends BaseBo<OtRequestInstance, OtRequestAttributes
 
         const registry = this.getOtDashboardRegistry();
 
-        await Promise.all(requestKeys.map((infoRequest: any): Promise<void> => {
-            return (async (item): Promise<void> => {
-                // Add null check for item and item.Key
-                if (!item?.Key) {
-                    throw { code: 'INVALID_KEY', message: 'Request item key is missing' };
-                }
+        await Promise.all(requestKeys.map(async (infoRequest: any): Promise<void> => {
+            if (!infoRequest?.Key) {
+                throw { code: 'INVALID_KEY', message: 'Request item key is missing' };
+            }
 
-                let func = registry[item.Key];
-                if (func) {
-                    let bo = func();
-                    if (bo) {
-                        bo.Request = filterAttributes;
-                        try {
-                            infoResponses[item.Key] = await bo.GetOtDashboardInfo({ Data: filterAttributes } || { Data: {} });
-                        } catch (error) {
-                            // Handle potential errors from GetOtDashboardInfo
-                            infoResponses[item.Key] = { error: 'Failed to get dashboard info', details: error };
-                        }
-                    } else {
-                        throw { code: 'BO_CREATION_FAILED', message: 'Failed to create business object for key: ' + item.Key };
+            let func = registry[infoRequest.Key];
+            if (func) {
+                let bo = func();
+                if (bo) {
+                    bo.Request = filterAttributes;
+                    try {
+                        infoResponses[infoRequest.Key] = await bo.GetOtDashboardInfo({ Data: filterAttributes || {} });
+                    } catch (error) {
+                        infoResponses[infoRequest.Key] = { error: 'Failed to get dashboard info', details: error };
                     }
                 } else {
-                    throw { code: 'KEY_NOT_FOUND', message: 'OtDashboardRegistry does not contain Key: ' + item.Key };
+                    throw { code: 'BO_CREATION_FAILED', message: 'Failed to create business object for key: ' + infoRequest.Key };
                 }
-            })(infoRequest);
+            } else {
+                throw { code: 'KEY_NOT_FOUND', message: 'OtDashboardRegistry does not contain Key: ' + infoRequest.Key };
+            }
         }));
+
         return infoResponses;
     }
 
@@ -70,7 +66,6 @@ export class OtDashboardBo extends BaseBo<OtRequestInstance, OtRequestAttributes
             otbedmanagementbo: () => BoFactory.GetBo(otbedmanagementbo.WardMasterBo, this.Request),
             otconformationbo: () => BoFactory.GetBo(otmanagementbo.OtRequestBo, this.Request),
             medicinerequestbo: () => BoFactory.GetBo(medicinerequestbo.PatientStockRequestsBo, this.Request),
-            // pharmachydispensebo: () => BoFactory.GetBo(medicinerequestbo.PatientStockRequestsBo, this.Request),
             radiologyimagingbo: () => BoFactory.GetBo(labresultbo.PatientOrderBo, this.Request),
             labresultbo: () => BoFactory.GetBo(labresultbo.PatientOrderBo, this.Request),
             mrdrequestbo: () => BoFactory.GetBo(mrdrequestbo.FileRequestBo, this.Request),

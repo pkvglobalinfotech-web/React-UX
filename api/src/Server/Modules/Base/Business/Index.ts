@@ -4,7 +4,8 @@ import { models, Instance, Dal, Request, QueryOptions, Sequelize, FindOptions, U
     from '../../../Core/Index';
 import { ApiRequest, ApiResponse, ISearchEnums, Paginator } from '../../../Common/Index';
 import { IAttributes } from '../Model/Index';
-import * as _ from 'lodash';
+// import * as _ from 'lodash';
+import _ from 'lodash';
 import { MailProvider, MailFactory, SmsProvider, SmsFactory } from '../../../../Server/Core/Index';
 
 export interface IBaseBo { }

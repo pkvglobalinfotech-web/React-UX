@@ -5,7 +5,7 @@ import { ApiResponse, BaseRequest, ApiRequest } from '../../../Common/Index';
 import { StockRequestDetailInstance, StockRequestDetailAttributes } from '../Model/Interface/Index';
 import { StockRequestDetailFilters } from '../Common/Filters.e';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class StockRequestDetailBo extends BaseBo<StockRequestDetailInstance, StockRequestDetailAttributes> {
     public async AddStockRequestDetail(req: BaseRequest): Promise<number> {

@@ -7,7 +7,7 @@ import { EventDashboardFilters } from '../Common/Filters.e';
 import { ReferenceValueFilters } from '../Common/Filters.e';
 import * as appbo from '../../SystemSettings/Business/Index';
 import { BoFactory } from '../../Base/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export enum SmsStatus {
     Success = 0,

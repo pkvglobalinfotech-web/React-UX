@@ -16,7 +16,7 @@ import { PatientArchiveFilters, PatientKinFilters, PatientGuarantorFilters } fro
 import { SequenceKeys } from '../../General/Common/Sequence.s';
 import { readFileSync, writeFileSync } from 'fs';
 import { AppConfig } from '../../../../config/index';
-import * as moment from 'moment';
+import moment from 'moment';
 import { join } from 'path';
 import * as userbo from '../../SystemSettings/Business/Index';
 import * as generalbo from '../../GeneralMaster/Business/Index';

@@ -11,7 +11,7 @@ import * as emr from '../../EMR/Business/Index';
 import * as otmangebo from '../../OtManagement/Business/Index';
 import { SequenceKeys } from '../../General/Common/Sequence.s';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 import { join } from 'path';
 import {
     PatientAllergyFilters, PatientConditionFilters,

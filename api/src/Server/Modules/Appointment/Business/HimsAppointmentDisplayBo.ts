@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions } from '../../../Core/Index';
 import { BaseRequest, ApiRequest, ApiResponse } from '../../../Common';
 import { AppointmentDisplayInstance, AppointmentDisplayAttributes } from '../Model/Interface/Index';
 import { AppointmentDisplayFilters } from '../Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class AppointmentDisplayBo extends BaseBo<AppointmentDisplayInstance, AppointmentDisplayAttributes>  {
     public async AddAppointmentDisplay(req: BaseRequest): Promise<number> {

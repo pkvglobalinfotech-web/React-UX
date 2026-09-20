@@ -24,7 +24,7 @@ import { PatientBillDetailsFilters, PatientBillsFilters } from '../../Billing/Co
 import {
     EncounterFilters
 } from '../../Visit/Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import { join } from 'path';
 import * as _ from 'lodash';
 import * as clinicalmasterBO from '../../ClinicalMaster/Business/Index';

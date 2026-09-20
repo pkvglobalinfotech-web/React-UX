@@ -6,7 +6,7 @@ import { StorePreferenceInstance, StorePreferenceAttributes } from '../Model/Int
 import { StorePreferenceFilters } from '../Common/Filters.e';
 import * as invBo from '../../Pharmacy/Business/Index';
 import { BoFactory } from '../../Base/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class StorePreferenceBo extends BaseBo<StorePreferenceInstance, StorePreferenceAttributes>  {
     public async AddStorePreference(req: BaseRequest): Promise<number> {

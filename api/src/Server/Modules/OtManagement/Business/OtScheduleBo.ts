@@ -11,7 +11,7 @@ import * as userbo from '../../SystemSettings/Business/Index';
 import * as regbo from '../../Registration/Business/Index';
 import * as schedulebo from '../../OtManagement/Business/Index';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
-import * as moment from 'moment';
+import moment from 'moment';
 import { UserAttributes } from '../../SystemSettings/Model/Interface/Index';
 import { ReferenceValueFilters } from '../../SystemSettings/Common/Filters.e';
 

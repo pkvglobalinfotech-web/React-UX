@@ -2185,26 +2185,26 @@ export class ItemMasterBo extends BaseBo<ItemMasterInstance, ItemMasterAttribute
     }
 
     public async MapStores(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemMasterId', 'StoreMasterId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemMasterId', 'StoreMasterId', this.Request);
         let stockitemBO = BoFactory.GetBo(bo.StockItemBo, this.Request);
         await stockitemBO.ManageStockItemAssosiations(req.Data);
         console.log('********************req.Data***************', req.Data);
         return await mapbo.Manage(req.Data);
     }
     public async MapItemStores(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemMasterId', 'StoreMasterId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemMasterId', 'StoreMasterId', this.Request);
         let stockitemBO = BoFactory.GetBo(bo.StockItemBo, this.Request);
         await stockitemBO.ManageStockItemAssosiations(req.Data);
         console.log('********************req.Data***************', req.Data);
         return await mapbo.Manages(req.Data);
     }
     public async GetStores(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemMasterId', 'StoreMasterId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemMasterId', 'StoreMasterId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
 
     public async MapFacilityStores(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemFacilityMapId', 'StoreMasterId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemFacilityMapId', 'StoreMasterId', this.Request);
         return await mapbo.Manage(req.Data);
     }
 
@@ -2221,7 +2221,7 @@ export class ItemMasterBo extends BaseBo<ItemMasterInstance, ItemMasterAttribute
     // }
 
     public async GetFacilityStores(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemFacilityMapId', 'StoreMasterId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemStoreMap, 'ItemFacilityMapId', 'StoreMasterId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
 
@@ -2340,12 +2340,12 @@ export class ItemMasterBo extends BaseBo<ItemMasterInstance, ItemMasterAttribute
     }
 
     public async MapFacilities(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.ItemFacilityMap, 'ItemMasterId', 'FacilityId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemFacilityMap, 'ItemMasterId', 'FacilityId', this.Request);
         return await mapbo.Manage(req.Data);
     }
 
     public async GetFacilities(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo(this.Models.ItemFacilityMap, 'ItemMasterId', 'FacilityId', super.Request);
+        let mapbo = new MapBo(this.Models.ItemFacilityMap, 'ItemMasterId', 'FacilityId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
 

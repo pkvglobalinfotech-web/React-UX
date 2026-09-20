@@ -1,12 +1,13 @@
 import { SessionConfig, CacheConfig } from '../config/index';
 import { GetRouter, Router, AuthMiddleware, TransMiddleware, Request, Response, NextFunction } from './Core/Index';
-import * as passport from 'passport';
-import * as session from 'express-session';
-import * as redisStore from 'connect-redis';
+import passport from 'passport';
+import session from 'express-session';
+import RedisStore from 'connect-redis';
+import { Redis } from './Core/Wrapper/Index';
 import NoUserCalls from './Modules/NoUserCalls/Router/Index';
 import API from './Modules/API/Router/Index';
-import Auth from './Modules/SystemSettings//Router/Auth';
-import SystemSettings from './Modules/SystemSettings//Router/Index';
+import Auth from './Modules/SystemSettings/Router/Auth';
+import SystemSettings from './Modules/SystemSettings/Router/Index';
 import LIS from './Modules/LIS/Router/Index';
 import Options from './Modules/General/Router/Index';
 import Registration from './Modules/Registration/Router/Index';
@@ -28,33 +29,54 @@ import BillModification from './Modules/BillModification/Router/Index';
 import VirtualHealthcare from './Modules/VirtualHealthcare/Router/Index';
 import CostManagement from './Modules/CostManagement/Router/Index';
 import TaskManagement from './Modules/TaskManagement/Router/Index';
-let Store = redisStore(session);
-SessionConfig.store = new Store(CacheConfig);
 
-//CORS middleware
+// Get the actual Redis client instance from your caching module singleton
+const redisClient = Redis.Instance.Client;
+// Initialize RedisStore dynamically depending on installed connect-redis version
+let sessionStore: session.Store;
+
+if (typeof RedisStore === 'function' && !(RedisStore.prototype instanceof (session as any).Store)) {
+    // connect-redis v6 and below pattern
+    const LegacyStoreConstructor = (RedisStore as any)(session);
+    sessionStore = new LegacyStoreConstructor({ client: redisClient, ...CacheConfig });
+} else {
+    // connect-redis v7+ pattern
+    sessionStore = new (RedisStore as any)({ client: redisClient });
+}
+
+SessionConfig.store = sessionStore;
+
+// CORS middleware
 var allowCrossDomain = function (req: Request, res: Response, next: NextFunction) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Authorization, Origin, X-Requested-With, Content-Type, Accept, x-api-key');
-    // res.header('Access-Control-Allow-Headers', 'Authorization, Origin, X-Requested-With, Content-Type, Accept');
 
     if (req.method === 'OPTIONS') {
-        res.send(200);
+        res.sendStatus(200);
     } else {
         next();
     }
 };
 
 var route: Router = GetRouter();
-route.use(session(SessionConfig));
-route.use(passport.initialize());
-route.use(passport.session());
+
+// Session & Authentication Middleware
+route.use(session(SessionConfig as session.SessionOptions));
+route.use((passport as any).initialize());
+route.use((passport as any).session());
 route.use(allowCrossDomain);
+
+// Unauthenticated Routes
 route.use('/v2/app', NoUserCalls);
 route.use('/Auth', Auth);
-route.use(passport.authenticate(['bearer'], { session: true }));
-route.use(AuthMiddleware);
-route.use(TransMiddleware);
+
+// Authenticated Routes
+route.use((passport as any).authenticate(['bearer'], { session: true }));
+route.use(AuthMiddleware as any);
+route.use(TransMiddleware as any);
+
+// App Route Modules
 route.use('/api', API);
 route.use('/SystemSettings', SystemSettings);
 route.use('/LIS', LIS);
@@ -79,4 +101,5 @@ route.use('/BillModification', BillModification);
 route.use('/VirtualHealthcare', VirtualHealthcare);
 route.use('/CostManagement', CostManagement);
 route.use('/TaskManagement', TaskManagement);
+
 export = route;

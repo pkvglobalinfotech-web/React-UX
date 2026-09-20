@@ -3,7 +3,7 @@ import { _ } from '../Vendor';
 import * as bwipjs from 'bwip-js';
 import { resolve } from 'path';
 import { readFileSync, existsSync } from 'fs';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class Template {
     public static Compile(template: any, data: any, compileOptions?: CompileOptions): string {

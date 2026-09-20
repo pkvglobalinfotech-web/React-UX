@@ -152,7 +152,8 @@ export class WorkOrderSampleBo extends BaseBo<WorkOrderSampleInstance, WorkOrder
                         isReqPatientWorkOrderSearch = true;
                         break;
                     case WorkOrderSampleFilters.VisitIdentifier:
-                        (GuarantorWhere as any).VisitIdentifier = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (GuarantorWhere as any).VisitIdentifier = { [Op.like]: '%' + (param.Value || '') + '%' };
+                        // (GuarantorWhere as any).VisitIdentifier = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
                         isGuarantorRequired = true;
                         break;
                     case WorkOrderSampleFilters.PatientOrderId:

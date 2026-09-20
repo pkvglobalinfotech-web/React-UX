@@ -7,7 +7,7 @@ import { EncounterDoctorInstance, EncounterDoctorAttributes } from '../Model/Int
 import { EncounterDoctorFilters } from '../Common/Filters.e';
 import { BoFactory } from '../../Base/Business/Index';
 import * as encbo from '../../Visit/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 import { AppointmentFilters, AppointmentDisplayFilters } from '../../Appointment/Common/Filters.e';
 import * as apptbo from '../../Appointment/Business/Index';
 import * as appointmentbo from '../../Appointment/Business/Index';

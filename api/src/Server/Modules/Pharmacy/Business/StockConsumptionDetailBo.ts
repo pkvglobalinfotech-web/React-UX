@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions, Report } from '../../../Core/Index';
 import { ApiResponse, BaseRequest, ApiRequest } from '../../../Common/Index';
 import { StockConsumptionDetailInstance, StockConsumptionDetailAttributes } from '../Model/Interface/Index';
 import { StockConsumptionDetailFilters } from '../Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import { BoFactory } from '../../Base/Business/Index';
 import * as bo from '../../Pharmacy/Business/Index';
 import * as userbo from '../../SystemSettings/Business/Index';

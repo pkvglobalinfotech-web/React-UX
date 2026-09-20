@@ -83,8 +83,9 @@ export class PatientDispenseBo extends BaseBo<PatientDispenseInstance, PatientDi
                 await patientbillBO.AddPatientDispenseBill(PatientDispenseId, req);
             }
 
-            let seqidentifier = SequenceKeys.DispenseStore;
+            let seqidentifier: string = SequenceKeys.DispenseStore;
             let dispenseIdentifier: any = null;
+
             if (req.Data.Header.DispenseStatusId === 2) {
                 if (req.Data.Header.StoreTypeId === 1) {
                     if (req.Data.Header.StoreSubTypeId === 2) {
@@ -207,7 +208,7 @@ export class PatientDispenseBo extends BaseBo<PatientDispenseInstance, PatientDi
                 await patientbillBO.AddPatientDispenseBill(PatientDispenseId, req);
             }
 
-            let seqidentifier = SequenceKeys.DispenseStore;
+            let seqidentifier: string = SequenceKeys.DispenseStore;
             let dispenseIdentifier: any = null;
             if (req.Data.Header.DispenseStatusId === 2) {
                 if (req.Data.Header.StoreTypeId === 1) {

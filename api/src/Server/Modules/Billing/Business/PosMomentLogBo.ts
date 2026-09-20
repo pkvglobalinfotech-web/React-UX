@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions } from '../../../Core/Index';
 import { BaseRequest, ApiRequest, ApiResponse } from '../../../Common/Index';
 import { PosMomentLogInstance, PosMomentLogAttributes } from '../Model/Interface/Index';
 import { PosMomentLogFilters } from '../Common/Filters.e';
-import * as request from 'request';
+import request from 'request';
 
 export class PosMomentLogBo extends BaseBo<PosMomentLogInstance, PosMomentLogAttributes> {
     public async AddPosMomentLog(req: BaseRequest): Promise<number> {

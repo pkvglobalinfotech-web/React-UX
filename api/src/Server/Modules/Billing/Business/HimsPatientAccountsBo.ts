@@ -94,7 +94,7 @@ export class PatientAccountsBo extends BaseBo<PatientAccountsInstance, PatientAc
                         where['TransactionDate'] = { '$between': param.Value || '' };
                         break;
                     case PatientAccountsFilters.TransactionNumber:
-                        where['TransactionNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['TransactionNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientAccountsFilters.PatientId:
                         where['PatientId'] = param.Value;

@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions } from '../../../Core/Index';
 import { BaseRequest, ApiRequest, ApiResponse } from '../../../Common/Index';
 import { QMSInstance, QMSAttributes } from '../Model/Interface/Index';
 import { QMSFilters, PatientFilters } from '../Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import { BoFactory } from '../../Base/Business/Index';
 import * as Regbo from '../../Registration/Business/Index';
 

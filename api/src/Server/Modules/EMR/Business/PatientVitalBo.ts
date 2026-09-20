@@ -8,7 +8,7 @@ import { EncounterFilters } from '../../Visit/Common/Filters.e';
 import * as encbo from '../../Visit/Business/Index';
 import * as userbo from '../../SystemSettings/Business/Index';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
 import { BoFactory } from '../../Base/Business/Index';
 import * as regbo from '../../Registration/Business/Index';

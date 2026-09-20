@@ -2,7 +2,8 @@ import { BoFactory } from '../../Base/Business/Index';
 import { Router, Request, Response, NextFunction, GetRouter, IncludeOptions, models } from '../../../Core/Index';
 import { UserBo, LoginSessionBo, FacilitySettingBo, FacilityBo } from '../Business/Index';
 import { Redis } from '../../../Core/Wrapper/Index';
-import * as passport from 'passport';
+// import * as passport from 'passport';
+import passport from 'passport';
 import * as bearer from 'passport-http-bearer';
 import * as local from 'passport-local';
 import * as passportCustom from 'passport-custom';
@@ -34,7 +35,7 @@ function getSessionContext(req: Request): any | null {
 }
 
 function getUserSessionContext(req: Request): any | null {
-    return req.user?.SessionContext || null;
+    return (req.user as any)?.SessionContext || null;
 }
 
 function validateSession(req: Request, res: Response, next: NextFunction): void {
@@ -123,7 +124,12 @@ router.post('/logout', (req: Request, res: Response, next: NextFunction): void =
         };
         loginSessionBo.updateLoginSession(logindetails);
     }
-    req.logout();
+    req.logout((err) => {
+  if (err) {
+    return next(err);
+  }
+  res.redirect('/login');
+});
     if (req.session) {
         req.session.destroy(function (err) {
             res.status(200).send({ result: 'success....' });

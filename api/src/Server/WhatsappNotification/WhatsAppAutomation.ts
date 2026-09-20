@@ -2,7 +2,8 @@ import * as cron from 'node-cron';
 import { WhatsappNotificationService } from '../../Server/WhatsappNotification/WhatsappNotification';
 import { BaseBo } from '../../Server/Modules/Base/Index';
 import { Model } from 'sequelize';
-import * as moment from 'moment';
+// import moment from 'moment';
+import moment from 'moment';
 
 export class WhatsAPPAutomation extends BaseBo<any, any> {
     public GetModel(): Model<any, any> {

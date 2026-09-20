@@ -19,7 +19,7 @@ import * as PatientTrackerBo from '../../Appointment/Business/Index';
 import * as OtManagementBo from '../../OtManagement/Business/Index';
 import { SurgeryEntryFilters } from '../../OtManagement/Common/Filters.e';
 import { join } from 'path';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class PatientCertificateBo extends BaseBo<PatientCertificateInstance, PatientCertificateAttributes> implements IOptionProvider {
     public async AddPatientCertificate(req: BaseRequest): Promise<number> {

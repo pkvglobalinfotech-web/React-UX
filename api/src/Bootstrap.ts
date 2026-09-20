@@ -2,7 +2,8 @@ import './EnvBootstrap';
 import { WebServer } from './Server/Core/WebServer';
 import { Request, Response, NextFunction } from 'express-serve-static-core';
 import { AppConfig } from './config/index';
-import * as route from './Server/Router';
+// import * as route from './Server/Router';
+import route from './Server/Router';
 import { ApiResponse, IBaseDto } from './Server/Common/Index';
 
 export class Bootstrap {

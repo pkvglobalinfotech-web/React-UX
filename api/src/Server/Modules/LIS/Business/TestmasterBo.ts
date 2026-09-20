@@ -313,12 +313,12 @@ export class TestmasterBo extends BaseBo<TestmasterInstance, TestmasterAttribute
 
     //Test Facility Mapping
     public async MapFacilities(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.Testmasterfacilitymap, 'TestmasterId', 'FacilityId', super.Request);
+        let mapbo = new MapBo(this.Models.Testmasterfacilitymap, 'TestmasterId', 'FacilityId', this.Request);
         return await mapbo.Manage(req.Data);
     }
 
     public async GetFacilities(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo(this.Models.Testmasterfacilitymap, 'TestmasterId', 'FacilityId', super.Request);
+        let mapbo = new MapBo(this.Models.Testmasterfacilitymap, 'TestmasterId', 'FacilityId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
     //lis/testmaster/TestAnalyteBO

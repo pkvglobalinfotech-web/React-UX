@@ -17,7 +17,7 @@ import * as generalBo from '../../General/Business/Index';
 import { BoFactory } from '../../Base/Business/Index';
 import * as lisbo from '../../LIS/Business/Index';
 import { SequenceKeys } from '../../General/Common/Sequence.s';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as clinicalmasterBO from '../../ClinicalMaster/Business/Index';
 import {
     ServiceItemFilters,
@@ -1240,7 +1240,7 @@ export class PatientOrderBo extends BaseBo<PatientOrderInstance, PatientOrderAtt
                         where['BillingStatusId'] = param.Value;
                         break;
                     case PatientOrderFilters.BillNumber:
-                        (where as any)['BillNumber'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (where as any)['BillNumber'] = { [Op.like]: '%' + ( param.Value || '') + '%' };
                         break;
                     case PatientOrderFilters.IncludeWOStatus:
                         let paramArr: Array<number> = [];
@@ -1416,7 +1416,7 @@ export class PatientOrderBo extends BaseBo<PatientOrderInstance, PatientOrderAtt
                         where['BillingStatusId'] = param.Value;
                         break;
                     case PatientOrderFilters.BillNumber:
-                        (where as any)['BillNumber'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (where as any)['BillNumber'] = { [Op.like]: '%' + (param.Value || '') + '%' };
                         break;
                     case PatientOrderFilters.IncludeWOStatus:
                         let paramArr: Array<number> = [];
@@ -1661,7 +1661,7 @@ export class PatientOrderBo extends BaseBo<PatientOrderInstance, PatientOrderAtt
                         where['BillingStatusId'] = param.Value;
                         break;
                     case PatientOrderFilters.BillNumber:
-                        (where as any)['BillNumber'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (where as any)['BillNumber'] = { [Op.like]: '%' + (param.Value || '') + '%' };
                         break;
                     case PatientOrderFilters.IncludeWOStatus:
                         let paramArr: Array<number> = [];
@@ -1819,7 +1819,7 @@ export class PatientOrderBo extends BaseBo<PatientOrderInstance, PatientOrderAtt
                         where['BillingStatusId'] = param.Value;
                         break;
                     case PatientOrderFilters.BillNumber:
-                        (where as any)['BillNumber'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (where as any)['BillNumber'] = { [Op.like]: '%' + (param.Value || '') + '%' };
                         break;
                     case PatientOrderFilters.IncludeWOStatus:
                         let paramArr: Array<number> = [];
@@ -2033,7 +2033,7 @@ export class PatientOrderBo extends BaseBo<PatientOrderInstance, PatientOrderAtt
                         where['BillingStatusId'] = param.Value;
                         break;
                     case PatientOrderFilters.BillNumber:
-                        (where as any)['BillNumber'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (where as any)['BillNumber'] = { [Op.like]: '%' + (param.Value || '') + '%' };
                         break;
                     case PatientOrderFilters.IncludeWOStatus:
                         let paramArr: Array<number> = [];
@@ -2081,7 +2081,7 @@ export class PatientOrderBo extends BaseBo<PatientOrderInstance, PatientOrderAtt
                         where['SubDepartmentId'] = param.Value;
                         break;
                     case PatientOrderFilters.VisitIdentifier:
-                        (GuarantorWhere as any)['VisitIdentifier'] = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        (GuarantorWhere as any)['VisitIdentifier'] = { [Op.like]: '%' + (param.Value || '') + '%' };
                         isGuarantorRequired = true;
                         break;
                     // case PatientOrderFilters.BillOrderNumber:

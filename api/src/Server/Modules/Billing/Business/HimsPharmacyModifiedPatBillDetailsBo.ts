@@ -92,7 +92,7 @@ export class PharmacyModifyPatBillDetailsBo extends BaseBo<PharmacyModifyPatBill
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
@@ -240,13 +240,13 @@ export class PharmacyModifyPatBillDetailsBo extends BaseBo<PharmacyModifyPatBill
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsTempIPBill:
@@ -404,10 +404,10 @@ export class PharmacyModifyPatBillDetailsBo extends BaseBo<PharmacyModifyPatBill
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsInvoicedDoctorShare:
@@ -539,10 +539,10 @@ export class PharmacyModifyPatBillDetailsBo extends BaseBo<PharmacyModifyPatBill
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsInvoicedDoctorShare:

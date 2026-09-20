@@ -8,7 +8,7 @@ import { join } from 'path';
 import * as userbo from '../../SystemSettings/Business/Index';
 // import * as regbo from '../../Registration/Business/Index';
 // import { NotificationService } from '../../../Notification/OneSignalNotification';
-// import * as moment from 'moment';
+// import moment from 'moment';
 
 export class OtScheduleDetailsBo extends BaseBo<OtScheduleDetailsInstance, OtScheduleDetailsAttributes> {
     public async AddOtScheduleDetails(req: BaseRequest): Promise<number> {

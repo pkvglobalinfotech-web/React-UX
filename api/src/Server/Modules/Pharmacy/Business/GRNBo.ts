@@ -13,7 +13,7 @@ import { join } from 'path';
 import * as userbo from '../../SystemSettings/Business/Index';
 import * as invbo from '../../Pharmacy/Business/Index';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as patbo from '../../Registration/Business/Index';
 
 export class GrnBo extends BaseBo<GrnInstance, GrnAttributes> {
@@ -1613,9 +1613,9 @@ export class GrnBo extends BaseBo<GrnInstance, GrnAttributes> {
         let NetVendorDetails = [];
 
         if (VendorDetails) {
-            let grndetails = [];
-            let prndetails = [];
-            let voucherdetails = [];
+            let grndetails:any = [];
+            let prndetails:any = [];
+            let voucherdetails:any = [];
             if (VendorDetails.length > 0) {
                 grndetails = VendorDetails[0];
             }

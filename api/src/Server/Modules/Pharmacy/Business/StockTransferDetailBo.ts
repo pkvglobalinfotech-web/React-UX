@@ -9,7 +9,7 @@ import { BoFactory } from '../../Base/Business/Index';
 import * as BillingBo from './Index';
 import * as invbo from '../../Pharmacy/Business/Index';
 import { join } from 'path';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class StockTransferDetailBo extends BaseBo<StockTransferDetailInstance, StockTransferDetailAttributes> {
     public async AddStockTransferDetail(req: BaseRequest): Promise<number> {

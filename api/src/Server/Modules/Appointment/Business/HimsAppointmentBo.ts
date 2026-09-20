@@ -16,7 +16,7 @@ import * as Userbo from '../../SystemSettings/Business/Index';
 import * as apptbo from '../../Appointment/Business/Index';
 import * as Vitalbo from '../../EMR/Business/Index';
 import { PatientVitalFilters } from '../../EMR/Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ReferenceValueFilters } from '../../SystemSettings/Common/Filters.e';
 import { FacilityAttributes } from '../../SystemSettings/Model/Interface/Index';
 import { MRDLocationFilters } from '../../IPManagement/Common/Filters.e';

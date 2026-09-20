@@ -32,7 +32,7 @@ import { PatientOrderFilters, PatientOrderDetailFilters } from '../../EMR/Common
 import { PatientBillsFilters, PatientBillDetailsFilters } from '../../Billing/Common/Filters.e';
 import { WorkOrderSampleFilters, WorkOrderSampleDetailFilters } from '../../LIS/Common/Filters.e';
 import { unlinkSync } from 'fs';
-import * as moment from 'moment';
+import moment from 'moment';
 import { AppConfig } from '../../../../config/index';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
 import { WhatsappNotificationService } from '../../../WhatsappNotification/WhatsappNotification';
@@ -904,7 +904,9 @@ export class PatientWorkorderBo extends BaseBo<PatientWorkorderInstance, Patient
                         where['Facilityid'] = param.Value;
                         break;
                     case PatientWorkorderFilters.VisitIdentifier:
-                        (encounterWhere as any).VisitIdentifier = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
+                        // Replace line 907 in PatientWorkorderBo.ts:
+(encounterWhere as any).VisitIdentifier = { [Op.like]: '%' + (param.Value || '') + '%' };
+                        // (encounterWhere as any).VisitIdentifier = { [Op.like]: '%' + ('' || param.Value || '') + '%' };
                         isReqEncounterSearch = true;
                         break;
                     case PatientWorkorderFilters.ReferenceNo:

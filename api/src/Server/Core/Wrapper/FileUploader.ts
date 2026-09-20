@@ -1,4 +1,5 @@
-import * as multer from 'multer';
+// import * as multer from 'multer';
+import multer from 'multer';
 import { Request, Response, NextFunction } from '../Index';
 
 type Option = { basePath: string, field?: string, storage?: 'disk' | 'memory' };

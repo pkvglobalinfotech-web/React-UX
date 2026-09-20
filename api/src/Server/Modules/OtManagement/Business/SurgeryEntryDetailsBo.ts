@@ -8,7 +8,7 @@ import { join } from 'path';
 import * as userbo from '../../SystemSettings/Business/Index';
 // import * as regbo from '../../Registration/Business/Index';
 // import { NotificationService } from '../../../Notification/OneSignalNotification';
-// import * as moment from 'moment';
+// import moment from 'moment';
 
 export class SurgeryEntryDetailsBo extends BaseBo<SurgeryEntryDetailsInstance, SurgeryEntryDetailsAttributes> {
     public async AddSurgeryEntryDetails(req: BaseRequest): Promise<number> {

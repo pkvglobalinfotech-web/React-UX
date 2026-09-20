@@ -9,27 +9,35 @@ import * as orderbo from '../../EMR/Business/Index';
 import * as surgbo from '../../OtManagement/Business/Index';
 import * as admitbo from '../../IPManagement/Business/Index';
 
-export class PatientEMRDashboardBo extends BaseBo<EncounterInstance, EncounterAttributes>  {
+export class PatientEMRDashboardBo extends BaseBo<EncounterInstance, EncounterAttributes> {
 
     public async GetPatientEMRDashboardOptions(req: BaseRequest): Promise<any> {
         let infoResponses: any = {};
 
-        let filterAttributes = req.Attributes;
-        let requestKeys: any = req.Data.Keys;
+        let filterAttributes = req.Attributes || {};
+        let requestKeys: any[] = req?.Data?.Keys || [];
 
-        await Promise.all(requestKeys.map((infoRequest: any): Promise<void> => {
-            return (async (item): Promise<void> => {
-                let registry = this.getPatientEMRDashboardRegistry();
-                let func = registry[item.Key];
-                if (func) {
-                    let bo = func();
+        const registry = this.getPatientEMRDashboardRegistry();
+
+        await Promise.all(requestKeys.map(async (infoRequest: any): Promise<void> => {
+            if (!infoRequest?.Key) {
+                throw { code: 'INVALID_KEY', message: 'Request item key is missing' };
+            }
+
+            let func = registry[infoRequest.Key];
+            if (func) {
+                let bo = func();
+                if (bo) {
                     bo.Request = filterAttributes;
-                    infoResponses[item.Key] = await bo.GetEMRDashBoardInfo({ Data: filterAttributes } || { Data: {} });
+                    infoResponses[infoRequest.Key] = await bo.GetEMRDashBoardInfo({ Data: filterAttributes || {} });
                 } else {
-                    throw { code: 'KEY_NOT_FOUND', message: 'PatientEMRDashboardRegistry does not contain Key:' + item.Key };
+                    throw { code: 'BO_CREATION_FAILED', message: 'Failed to create business object for key: ' + infoRequest.Key };
                 }
-            })(infoRequest);
+            } else {
+                throw { code: 'KEY_NOT_FOUND', message: 'PatientEMRDashboardRegistry does not contain Key:' + infoRequest.Key };
+            }
         }));
+
         return infoResponses;
     }
 

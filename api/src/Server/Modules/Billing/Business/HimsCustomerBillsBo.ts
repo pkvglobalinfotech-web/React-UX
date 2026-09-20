@@ -175,7 +175,7 @@ export class CustomerBillsBo extends BaseBo<CustomerBillsInstance, CustomerBills
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case CustomerBillsFilters.BillNumber:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + ( param.Value || '') };
                         break;
                     case CustomerBillsFilters.FromDate:
                         where['BillDateTime'] = where['BillDateTime'] || {};

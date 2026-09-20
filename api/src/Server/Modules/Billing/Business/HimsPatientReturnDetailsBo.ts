@@ -6,7 +6,7 @@ import { PatientReturnDetailsFilters } from '../Common/Filters.e';
 import { EncounterFilters } from '../../Visit/Common/Filters.e';
 import { PatientReturnDetailsInstance, PatientReturnDetailsAttributes } from '../Model/Interface/Index';
 import { BoFactory } from '../../../Modules/Base/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as _ from 'lodash';
 import * as userbo from '../../SystemSettings/Business/Index';
 import { join } from 'path';
@@ -106,7 +106,7 @@ export class PatientReturnDetailsBo extends BaseBo<PatientReturnDetailsInstance,
                     (where['ReturnDateTime'] as any)['$lte'] = param.Value || null;
                     break;
                 case PatientReturnDetailsFilters.ServiceName:
-                    where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                    where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                     break;
                 case PatientReturnDetailsFilters.PatientBillId:
                     where['PatientBillId'] = param.Value;

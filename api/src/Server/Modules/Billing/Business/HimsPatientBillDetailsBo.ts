@@ -24,9 +24,9 @@ import { join } from 'path';
 import * as _ from 'lodash';
 import * as userbo from '../../SystemSettings/Business/Index';
 import * as clinicalMasterBo from '../../ClinicalMaster/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
-// import * as moment from 'moment';
+// import moment from 'moment';
 
 export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, PatientBillDetailsAttributes> {
     public async AddPatientBillDetails(req: BaseRequest): Promise<number> {
@@ -1333,7 +1333,7 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
@@ -1570,7 +1570,7 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
@@ -1839,13 +1839,13 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsTempIPBill:
@@ -2164,13 +2164,13 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsTempIPBill:
@@ -2452,13 +2452,13 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsTempIPBill:
@@ -2710,13 +2710,13 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value + ' 23:59:59';
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsTempIPBill:
@@ -2883,10 +2883,10 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsInvoicedDoctorShare:
@@ -3021,10 +3021,10 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         (where['BillDateTime'] as any)['$lte'] = param.Value;
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.BillNumber:
-                        billWhere['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        billWhere['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
                         isReqBillSearch = true;
                         break;
                     case PatientBillDetailsFilters.IsInvoicedDoctorShare:
@@ -3209,7 +3209,7 @@ export class PatientBillDetailsBo extends BaseBo<PatientBillDetailsInstance, Pat
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillDetailsFilters.ServiceName:
-                        where['ServiceName'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['ServiceName'] = { '$like': '%' + (param.Value || '') + '%' };
                         break;
                     case PatientBillDetailsFilters.IsSupplementary:
                         (where as any)['$not'] = [{ 'IsSupplementary': !param.Value }];

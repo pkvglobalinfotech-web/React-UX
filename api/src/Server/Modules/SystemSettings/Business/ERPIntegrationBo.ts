@@ -3,7 +3,7 @@ import { AppConfig } from '../../../../config/index';
 import { GuarantorFormat } from './ERPFormatter/GuarantorFormat';
 import { VendorMasterFormat } from './ERPFormatter/VendorMasterFormat';
 import { FinanceReceivableFormat } from './ERPFormatter/FinanceReceivableFormat';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class ERPIntegrationBo {
     public async ERPIntegrationXML(req: BaseRequest): Promise<boolean> {

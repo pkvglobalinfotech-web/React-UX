@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions } from '../../../Core/Index';
 import { ApiResponse, BaseRequest, ApiRequest } from '../../../Common/Index';
 import { LocalWellCustomerOrderInstance, LocalWellCustomerOrderAttributes } from '../Model/Interface/Index';
 import { LocalWellCustomerOrderFilters } from '../Common/Filters.e';
-import * as request from 'request';
+import request from 'request';
 import * as bo from '../../Registration/Business/Index';
 import { BoFactory } from '../../Base/Business/Index';
 

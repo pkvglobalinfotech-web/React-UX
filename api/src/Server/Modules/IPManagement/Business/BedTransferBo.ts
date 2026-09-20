@@ -15,7 +15,7 @@ import * as userbo from '../../SystemSettings/Business/Index';
 import * as _ from 'lodash';
 import * as regbo from '../../Registration/Business/Index';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as generalMasterBo from '../../GeneralMaster/Business/Index';
 import { WhatsappNotificationService } from '../../../WhatsappNotification/WhatsappNotification';
 

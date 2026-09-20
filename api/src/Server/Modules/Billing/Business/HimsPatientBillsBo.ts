@@ -45,7 +45,7 @@ import {
     ServiceItemAliasFilters
 } from '../../ClinicalMaster/Common/Filters.e';
 import * as clinicalmasterBO from '../../ClinicalMaster/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as generalMasterBO from '../../GeneralMaster/Business/Index';
 import * as generalBO from '../../General/Business/Index';
 import * as userbo from '../../SystemSettings/Business/Index';
@@ -7571,7 +7571,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -7790,7 +7790,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -8021,7 +8021,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -8259,7 +8259,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -10159,7 +10159,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -10526,7 +10526,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -10758,7 +10758,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -11090,7 +11090,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -11510,7 +11510,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -12072,7 +12072,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -12528,7 +12528,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -12935,7 +12935,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -13315,7 +13315,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },
@@ -13679,7 +13679,7 @@ export class PatientBillsBo extends BaseBo<PatientBillsInstance, PatientBillsAtt
                         where['BillDateTime'] = { '$between': param.Value || '' };
                         break;
                     case PatientBillsFilters.PatBillNr:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') };
                         break;
                     case PatientBillsFilters.PatId:
                         (where as any)['$and'] = [{ 'PatientId': param.Value },

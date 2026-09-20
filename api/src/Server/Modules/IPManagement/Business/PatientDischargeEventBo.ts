@@ -8,7 +8,7 @@ import { BoFactory } from '../../Base/Business/Index';
 import * as encbo from '../../Visit/Business/Index';
 import * as inpatientBo from '../../IPManagement/Business/Index';
 import * as generalMasterBO from '../../GeneralMaster/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as inpatientBO from '../../IPManagement/Business/Index';
 import * as regbo from '../../Registration/Business/Index';
 import * as userbo from '../../SystemSettings/Business/Index';

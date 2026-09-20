@@ -12,7 +12,7 @@ import * as bo from '../../Pharmacy/Business/Index';
 import * as userbo from '../../SystemSettings/Business/Index';
 import { join } from 'path';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 // import { any } from 'bluebird';
 // import { StockRequestService } from '../Service/Index';
 

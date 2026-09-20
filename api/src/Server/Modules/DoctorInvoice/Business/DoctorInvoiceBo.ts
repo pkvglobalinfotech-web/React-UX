@@ -9,7 +9,7 @@ import { BoFactory } from '../../Base/Business/Index';
 import * as doctorBo from '../Business/Index';
 import { join } from 'path';
 import * as userbo from '../../SystemSettings/Business/Index';
-// import * as moment from 'moment';
+// import moment from 'moment';
 
 export class DoctorInvoiceBo extends BaseBo<DoctorInvoiceInstance, DoctorInvoiceAttributes> {
     public async AddDoctorInvoice(req: BaseRequest): Promise<number> {

@@ -20,7 +20,7 @@ import * as appMgBo from '../../SystemSettings/Business/Index';
 import * as regBo from '../../Registration/Business/Index';
 import { join } from 'path';
 import * as userbo from '../../SystemSettings/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 import { ServiceItemAliasFilters, ProcedureFilters } from '../../ClinicalMaster/Common/Filters.e';
 import { UserTeamFilters } from '../../SystemSettings/Common/Filters.e';
 import { ReferenceValueFilters, DepartmentFilters } from '../../SystemSettings/Common/Filters.e';

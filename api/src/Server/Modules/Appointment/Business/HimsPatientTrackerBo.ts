@@ -12,7 +12,7 @@ import * as userbo from '../../SystemSettings/Business/Index';
 import { PatientAttributes } from '../../Registration/Model/Interface/Index';
 import * as regbo from '../../Registration/Business/Index';
 import { ReferenceValueFilters } from '../../SystemSettings/Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as Referral from '../../GeneralMaster/Business/Index';
 import { WhatsappNotificationService } from '../../../WhatsappNotification/WhatsappNotification';
 

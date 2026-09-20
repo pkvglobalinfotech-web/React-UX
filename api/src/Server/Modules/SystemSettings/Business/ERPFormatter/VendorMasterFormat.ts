@@ -1,5 +1,5 @@
 import { BaseRequest } from '../../../../Common/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class VendorMasterFormat {
     public static heading: any = [];

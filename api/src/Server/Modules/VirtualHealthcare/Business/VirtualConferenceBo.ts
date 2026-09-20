@@ -4,7 +4,7 @@ import { WhereOptions, IncludeOptions } from '../../../Core/Index';
 import { BaseRequest, ApiRequest, ApiResponse, ConferenceService } from '../../../Common/Index';
 import { VirtualConferenceInstance, VirtualConferenceAttributes } from '../Model/Interface/Index';
 import { VirtualConferenceFilters, VirtualConferenceParticipantFilters } from '../Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import { VirtualConferenceParticipantBo } from './VirtualConferenceParticipantBo';
 
 export class VirtualConferenceBo extends BaseBo<VirtualConferenceInstance, VirtualConferenceAttributes> {

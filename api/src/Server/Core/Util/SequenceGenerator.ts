@@ -1,5 +1,5 @@
 import { Redis } from '../Wrapper/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class SequenceGenerator {
     private static Redis: Redis = Redis.Instance;

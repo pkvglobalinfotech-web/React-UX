@@ -6,7 +6,7 @@ import { PatientImmunizationScheduleInstance, PatientImmunizationScheduleAttribu
 import { PatientImmunizationScheduleFilters } from '../Common/Filters.e';
 import { BoFactory } from '../../Base/Business/Index';
 import * as clibo from '../../ClinicalMaster/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class PatientImmunizationScheduleBo extends BaseBo<PatientImmunizationScheduleInstance, PatientImmunizationScheduleAttributes>  {
     public async AddPatientImmunizationSchedule(req: BaseRequest): Promise<number> {

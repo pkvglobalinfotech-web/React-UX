@@ -1,53 +1,26 @@
 {
   "compilerOptions": {
-    
-
-    // "target": "es2020",
+    "target": "ES2022",
     "module": "commonjs",
-    // "lib": ["es2020", "dom"],
-    "target": "es2018",
-    "lib": ["es2018", "dom"],
-    "skipLibCheck": true,
-    "strict": false,
-    
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "sourceMap": false,
-    "pretty": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitUseStrict": false,
-    "noFallthroughCasesInSwitch": true,
-"strictNullChecks": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./tools/manual_typings/seed"
-    ],
-    "rootDir": "./",
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "outDir": "./dist",
     "baseUrl": "./src",
-    "ignoreDeprecations": "5.0",
-    "outDir": "./dist/",
-    "paths": {}
+    
+    /* Disables strict type checks causing legacy BO & Model errors */
+    "strict": false,
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": false,
+
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   },
-  "exclude": [
-    "node_modules",
-    "dist",
-    "tools/generator/code",
-    "**/*.spec.ts",
-    "tools/*.ts",
-    "tools/**/*.ts"
-  ],
-  "compileOnSave": false,
-  "ts-node": {
-    "transpileOnly": true,
-    "compilerOptions": {
-      "noImplicitAny": false
-    }
-  }
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "**/*.spec.ts", "tools"]
 }

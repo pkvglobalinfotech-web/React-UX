@@ -1,5 +1,5 @@
 import * as express from 'express';
-import * as request from 'request';
+import request from 'request';
 //import { FileUploader } from '../../../Core/Index';
 //import { AppConfig } from '../../../../config/index';
 

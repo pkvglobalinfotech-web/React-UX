@@ -21,7 +21,7 @@ import * as _ from 'lodash';
 import * as regbo from '../../Registration/Business/Index';
 import * as schedulebo from '../../OtManagement/Business/Index';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class SurgeryEntryBo extends BaseBo<SurgeryEntryInstance, SurgeryEntryAttributes> {
     // public async AddSurgeryEntry(req: BaseRequest): Promise<number> {

@@ -8,7 +8,7 @@ import { ServiceRateCategoryFilters } from '../../ClinicalMaster/Common/Filters.
 import { AppInfoInstance, AppInfoAttributes } from '../Model/Interface/Index';
 import { BoFactory } from '../../Base/Business/Index';
 import * as clinicbo from '../../ClinicalMaster/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class MasterExportBo extends BaseBo<AppInfoInstance, AppInfoAttributes> {
     public async MasterExportXL(req: BaseRequest): Promise<boolean> {

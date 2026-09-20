@@ -1104,12 +1104,12 @@ export class ServiceItemBo extends BaseBo<ServiceItemInstance, ServiceItemAttrib
     }
 
     public async MapFacilities(req: BaseRequest) {
-        let mapbo = new MapBo((this.Models.ServiceItemFacilityMap as any), 'ServiceItemId', 'FacilityId', super.Request);
+        let mapbo = new MapBo((this.Models.ServiceItemFacilityMap as any), 'ServiceItemId', 'FacilityId', this.Request);
         return await mapbo.Manage(req.Data);
     }
 
     public async GetFacilities(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo((this.Models.ServiceItemFacilityMap as any), 'ServiceItemId', 'FacilityId', super.Request);
+        let mapbo = new MapBo((this.Models.ServiceItemFacilityMap as any), 'ServiceItemId', 'FacilityId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
 

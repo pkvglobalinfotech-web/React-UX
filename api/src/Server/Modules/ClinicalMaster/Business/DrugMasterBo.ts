@@ -170,12 +170,12 @@ export class DrugMasterBo extends BaseBo<DrugMasterInstance, DrugMasterAttribute
     }
 
     public async MapDiagnosiss(req: BaseRequest) {
-    let mapbo = new MapBo(this.Models.DrugDiagnosisMap as any, 'DrugId', 'DiagnosisId', super.Request);
+    let mapbo = new MapBo(this.Models.DrugDiagnosisMap as any, 'DrugId', 'DiagnosisId', this.Request);
     return await mapbo.Manage(req.Data);
 }
 
 public async GetDiagnosiss(apiReq?: ApiRequest<ISearchEnums>) {
-    let mapbo = new MapBo(this.Models.DrugDiagnosisMap as any, 'DrugId', 'DiagnosisId', super.Request);
+    let mapbo = new MapBo(this.Models.DrugDiagnosisMap as any, 'DrugId', 'DiagnosisId', this.Request);
     return await mapbo.GetMaps(apiReq);
 }
     public async GetOptions(key: string, apiReq?: ApiRequest<DrugMasterFilters>): Promise<any> {

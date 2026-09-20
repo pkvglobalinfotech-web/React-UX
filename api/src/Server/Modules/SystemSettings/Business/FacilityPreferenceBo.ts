@@ -6,7 +6,7 @@ import { FacilityPreferenceInstance, FacilityPreferenceAttributes } from '../Mod
 import { FacilityPreferenceFilters } from '../Common/Filters.e';
 import * as appMgBo from '../../SystemSettings/Business/Index';
 import { BoFactory } from '../../Base/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class FacilityPreferenceBo extends BaseBo<FacilityPreferenceInstance, FacilityPreferenceAttributes>  {
     public async AddFacilityPreference(req: BaseRequest): Promise<number> {

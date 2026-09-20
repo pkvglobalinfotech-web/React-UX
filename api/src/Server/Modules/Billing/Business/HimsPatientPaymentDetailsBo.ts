@@ -24,7 +24,7 @@ import * as doctorinvoicebo from '../../DoctorInvoice/Business/Index';
 import * as orderbo from '../../EMR/Business/Index';
 import * as encbo from '../../Visit/Business/Index';
 import * as _ from 'lodash';
-import * as moment from 'moment';
+import moment from 'moment';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
 import { ReferenceValueFilters } from '../../SystemSettings/Common/Filters.e';
 import * as generalMasterBo from '../../GeneralMaster/Business/Index';
@@ -5821,18 +5821,19 @@ export class PatientPaymentDetailsBo extends BaseBo<PatientPaymentDetailsInstanc
 
 
         if (OverallCollection) {
-            let opbillcollection1 = [];
-            let opbillcollection2 = [];
-            let opbillcollection3 = [];
-            let ipbillcollection1 = [];
-            let ipbillcollection2 = [];
-            let ipbillcollection3 = [];
-            let phabillcollection1 = [];
-            let phabillcollection2 = [];
-            let phabillcollection3 = [];
-            let phabillcollection4 = [];
-            let doctorshare = [];
-            let advancefund = [];
+            let opbillcollection1: any = [];
+            // let opbillcollection2 = [];
+            let opbillcollection2: any = [];
+            let opbillcollection3: any = [];
+            let ipbillcollection1: any = [];
+            let ipbillcollection2: any = [];
+            let ipbillcollection3: any = [];
+            let phabillcollection1: any = [];
+            let phabillcollection2: any = [];
+            let phabillcollection3: any = [];
+            let phabillcollection4: any = [];
+            let doctorshare: any = [];
+            let advancefund: any = [];
             if (OverallCollection.length > 0) {
                 opbillcollection1 = OverallCollection[0];
             }

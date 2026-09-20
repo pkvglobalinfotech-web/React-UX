@@ -11,7 +11,7 @@ import * as encounterBO from '../../Visit/Business/Index';
 import * as billBO from '../../Billing/Business/Index';
 import { PatientBillDetailsFilters } from '../../Billing/Common/Filters.e';
 import * as clinicalMasterBo from '../../ClinicalMaster/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as userbo from '../../SystemSettings/Business/Index';
 import { join } from 'path';
 import { Sequence, SequenceKeys } from '../../General/Common/Sequence.s';

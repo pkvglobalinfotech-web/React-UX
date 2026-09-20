@@ -14,26 +14,24 @@ const InventoryDashboardRegistry: { [key: string]: (request: any) => any } = {
     purchasereturnbo: (request: any) => BoFactory.GetBo(inventorybo.PurchaseReturnBo, request),
 };
 
-
-export class InventoryDashboardBo extends BaseBo<ItemMasterInstance, ItemMasterAttributes>  {
+export class InventoryDashboardBo extends BaseBo<ItemMasterInstance, ItemMasterAttributes> {
 
     public async GetInventoryDashboardOptions(req: BaseRequest): Promise<any> {
         let infoResponses: any = {};
 
-        let filterAttributes = req.Attributes;
-        let requestKeys: any = req.Data.Keys;
+        let filterAttributes = req.Attributes || {};
+        let requestKeys: any[] = req.Data?.Keys || [];
 
-        await Promise.all(requestKeys.map((infoRequest: any): Promise<void> => {
-            return (async (item): Promise<void> => {
-                let func = InventoryDashboardRegistry[item.Key];
-                if (func) {
-                    let bo = func(this.Request);
-                    infoResponses[item.Key] = await bo.GetInventoryDashBoardInfo({ Data: filterAttributes } || { Data: {} });
-                } else {
-                    throw { code: 'KEY_NOT_FOUND', message: 'InventoryDashboardRegistry does not contain Key:' + item.Key };
-                }
-            })(infoRequest);
+        await Promise.all(requestKeys.map(async (infoRequest: any): Promise<void> => {
+            let func = InventoryDashboardRegistry[infoRequest.Key];
+            if (func) {
+                let bo = func(this.Request);
+                infoResponses[infoRequest.Key] = await bo.GetInventoryDashBoardInfo({ Data: filterAttributes });
+            } else {
+                throw { code: 'KEY_NOT_FOUND', message: 'InventoryDashboardRegistry does not contain Key:' + infoRequest.Key };
+            }
         }));
+
         return infoResponses;
     }
 

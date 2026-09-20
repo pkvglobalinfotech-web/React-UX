@@ -4,7 +4,7 @@ import { EncounterBo } from '../Server/Modules/Visit/Business/Index';
 import { EncounterFilters } from '../Server/Modules/Visit/Common/Filters.e';
 import { PatientBillsBo } from '../Server/Modules/Billing/Business/Index';
 import { CronStatusBo } from '../Server/Modules/SystemSettings/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export function IPBillmodificationJob(job: Job, done: DoneCallback) {
     RunIPBillmodificationJob(job).then(() => {

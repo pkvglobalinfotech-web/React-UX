@@ -91,12 +91,12 @@ export class ReferralBo extends BaseBo<ReferralInstance, ReferralAttributes> {
     }
 
     public async MapUsers(req: BaseRequest) {
-        let mapbo = new MapBo(this.Models.ReferralUserMap as any, 'ReferralId', 'UserId', super.Request);
+        let mapbo = new MapBo(this.Models.ReferralUserMap as any, 'ReferralId', 'UserId', this.Request);
         return await mapbo.Manage(req.Data);
     }
 
     public async GetUsers(apiReq?: ApiRequest<ISearchEnums>) {
-        let mapbo = new MapBo(this.Models.ReferralUserMap as any, 'ReferralId', 'UserId', super.Request);
+        let mapbo = new MapBo(this.Models.ReferralUserMap as any, 'ReferralId', 'UserId', this.Request);
         return await mapbo.GetMaps(apiReq);
     }
 

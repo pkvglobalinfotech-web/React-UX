@@ -1,5 +1,5 @@
 import { ApiRequest } from '../../../Common/Index';
-import * as request from 'request';
+import request from 'request';
 
 export class SNOMEDCTBo {
     public static async GetSNOMEDCT(apiReq?: ApiRequest<any>): Promise<any> {

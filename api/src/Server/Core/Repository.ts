@@ -1,8 +1,9 @@
 import { basename, join } from 'path';
-import * as SequelizeStatic from 'sequelize';
+import SequelizeStatic from 'sequelize';
+// import glob from 'glob';
+import * as glob from 'glob';
 import { Sequelize } from './Vendor';
 import { DbConfig } from '../../config/index';
-import * as glob from 'glob';
 
 const Op = SequelizeStatic.Op;
 const aliases = {
@@ -48,34 +49,42 @@ class Database {
     private _basename: string;
     private _models: Models;
     private _sequelize: Sequelize;
+
     constructor() {
         this._basename = basename(module.filename).toLowerCase();
         let db = DbConfig;
-        // let dbConfig = configs.getDatabaseConfig();
-        // if (dbConfig.logging) {
-        // dbConfig.logging = logger.info;
-        // }
-        //(SequelizeStatic as any).cls = cls.createNamespace("sequelize-transaction");
+
         console.log(' DB Name : ' + db.Database);
         const Options = {};
         Object.assign(Options, db.Options, aliases);
-        this._sequelize = new SequelizeStatic(db.Database, db.UserName, db.Password, Options);
+        
+        this._sequelize = new (SequelizeStatic as any)(db.Database, db.UserName, db.Password, Options);
         this._models = ({} as any);
+
         let modelPattern = join(__dirname, '../Modules', '/**/*.Model.js');
-        console.log(modelPattern);
-        let files = glob.sync(modelPattern, { sync: true });
+        // glob requires forward slashes — path.join uses backslashes on Windows
+        const modelPatternGlob = modelPattern.replace(/\\/g, '/');
+        console.log(modelPatternGlob);
+        
+        // glob.sync returns string[] directly
+        let files = glob.sync(modelPatternGlob);
         console.log(files);
+
         files.forEach((file: string) => {
-            let model = this._sequelize.import(file);
+            // sequelize.import() was removed in Sequelize v6.
+            // Manually require the model file and call its default export.
+            // eslint-disable-next-line @typescript-eslint/no-var-requires
+            const modelModule = require(file);
+            const modelDefiner = modelModule.default || modelModule;
+            const model = modelDefiner(this._sequelize, (SequelizeStatic as any).DataTypes);
             (this._models as any)[(model as any).name] = model;
         });
-        Object.keys(this._models)
-            .forEach((modelName: string) => {
-                if (typeof (this._models as any)[modelName].associate === 'function') {
-                    (this._models as any)[modelName].associate(this._models);
-                }
-            });
-        //this._sequelize.sync(); //TODO: Creating Table - RND required.
+
+        Object.keys(this._models).forEach((modelName: string) => {
+            if (typeof (this._models as any)[modelName].associate === 'function') {
+                (this._models as any)[modelName].associate(this._models);
+            }
+        });
     }
 
     public getModels(): Models {

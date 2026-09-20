@@ -10,7 +10,7 @@ import { SequenceKeys } from '../../General/Common/Sequence.s';
 import * as userbo from '../../SystemSettings/Business/Index';
 import * as invbo from '../../Pharmacy/Business/Index';
 import { join } from 'path';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class StockRequestBo extends BaseBo<StockRequestInstance, StockRequestAttributes>  {
 

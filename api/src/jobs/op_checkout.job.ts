@@ -2,7 +2,7 @@ import { Job, DoneCallback } from 'bull';
 import { BoFactory } from '../Server/Modules/Base/Index';
 import { AppointmentBo, PatientTrackerBo } from '../Server/Modules/Appointment/Business/Index';
 import { CronStatusBo } from '../Server/Modules/SystemSettings/Business/Index';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export function OPCheckoutJob(job: Job, done: DoneCallback) {
     RunOPCheckoutJob(job).then(() => {

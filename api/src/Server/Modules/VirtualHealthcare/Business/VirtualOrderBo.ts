@@ -20,7 +20,7 @@ import { join } from 'path';
 import * as genMasbo from '../../GeneralMaster/Business/Index';
 // import { readFileSync } from 'fs';
 import { PatientOrderFilters } from '../../EMR/Common/Filters.e';
-import * as moment from 'moment';
+import moment from 'moment';
 import * as _ from 'lodash';
 import { NotificationService } from '../../../Notification/OneSignalNotification';
 

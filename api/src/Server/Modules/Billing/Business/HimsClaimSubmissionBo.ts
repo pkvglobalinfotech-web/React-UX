@@ -9,7 +9,7 @@ import { BoFactory } from '../../Base/Business/Index';
 import * as bo from '../../Billing/Business/Index';
 import * as userbo from '../../SystemSettings/Business/Index';
 import { join } from 'path';
-import * as moment from 'moment';
+import moment from 'moment';
 
 export class ClaimSubmissionBo extends BaseBo<ClaimSubmissionInstance, ClaimSubmissionAttributes> {
     public async AddClaimSubmission(req: BaseRequest): Promise<number> {

@@ -207,7 +207,8 @@ export class TreatmentPlanBo extends BaseBo<TreatmentPlanInstance, TreatmentPlan
                         }
                         break;
                     case TreatmentPlanFilters.BillNumber:
-                        where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
+                        where['BillNumber'] = { '$like': '%' + (param.Value || '') + '%' };
+                        // where['BillNumber'] = { '$like': '%' + ('' || param.Value || '') + '%' };
                         break;
                     default:
                         throw 'Not Implemented';
