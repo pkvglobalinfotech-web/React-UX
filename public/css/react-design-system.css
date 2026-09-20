@@ -207,7 +207,7 @@ textarea,
   font-size: 13px !important;
   font-weight: 400 !important;
   font-family: var(--hims-font) !important;
-  padding: 0 12px !important;
+  padding: 0 12px ;
   box-shadow: var(--hims-shadow-xs) !important;
   transition: var(--hims-transition-fast) !important;
   outline: none !important;

@@ -1,7 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { colors, radii, spacing, shadows, transitions, typography } from '../components/ui/tokens';
-import { useNavigate } from "react-router-dom";
-import './LoginView.css';
+import { colors, radii, spacing, shadows, transitions, typography } from '../../src/components/ui/tokens';
 
 // ─────────────────────────────────────────────────────────────
 // Types (original props shape preserved)
@@ -27,7 +25,7 @@ const FEATURES = [
   { icon: 'fa-shield-halved', label: 'Role-Based Access', desc: 'Granular permissions for every clinical and admin role' },
 ];
 
-const LoginPage: React.FC<LoginPageProps> = ({
+export const LoginPage: React.FC<LoginPageProps> = ({
   isLoading = false,
   errorMessage,
   isAccountLocked = false,
@@ -47,18 +45,13 @@ const LoginPage: React.FC<LoginPageProps> = ({
 
   const usernameRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
-  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     console.log('LoginPage: handleSubmit called');
     e.preventDefault();
     setTouched({ username: true, password: true });
     if (!username.trim() || !password.trim()) return;
-    if(username==="admin" && password==="admin123"){
-      navigate('/dashboard');
-    } else{
-      //Need to do api call
-    }
+    if (onLogin) onLogin(username.trim(), password, rememberMe);
   };
 
   const usernameError = touched.username && !username.trim() ? 'Username is required' : '';
@@ -82,6 +75,8 @@ const LoginPage: React.FC<LoginPageProps> = ({
   });
 
   return (
+    <>
+    <h1>sc</h1>
     <div style={{
       display: 'flex',
       minHeight: '100vh',
@@ -186,7 +181,7 @@ const LoginPage: React.FC<LoginPageProps> = ({
             padding: '40px',
           }}>
             {/* Form header */}
-            <div style={{ marginBottom: '20px' }}>
+            <div style={{ marginBottom: '32px' }}>
               <h1 style={{ margin: '0 0 6px 0', fontSize: '22px', fontWeight: 800, color: colors.textMain, letterSpacing: '-0.3px' }}>
                 Sign in
               </h1>
@@ -232,22 +227,20 @@ const LoginPage: React.FC<LoginPageProps> = ({
                     style={{
                       position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)',
                       fontSize: '13px', color: userFocused ? colors.primary : colors.textSubtle,
-                      transition: transitions.fast, pointerEvents: 'none',
+                      transition: transitions.fast, pointerEvents: 'none', paddingLeft: '8px',
                     }}
                   />
                   <input
                     ref={usernameRef}
                     id="login-username"
-                    className="login-inputField"
                     type="text"
                     autoComplete="username"
-                    aria-invalid={usernameError ? 'true' : 'false'}
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                     onFocus={() => setUserFocused(true)}
                     onBlur={() => { setUserFocused(false); setTouched((p) => ({ ...p, username: true })); }}
                     placeholder="Enter your username"
-                    style={inputStyle(userFocused, !!usernameError)}
+                    // style={inputStyle(userFocused, !!usernameError)}
                     disabled={isLoading || isAccountLocked}
                   />
                 </div>
@@ -276,10 +269,8 @@ const LoginPage: React.FC<LoginPageProps> = ({
                   <input
                     ref={passwordRef}
                     id="login-password"
-                    className="login-inputField"
                     type={showPassword ? 'text' : 'password'}
                     autoComplete="current-password"
-                    aria-invalid={passwordError ? 'true' : 'false'}
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onFocus={() => setPassFocused(true)}
@@ -434,6 +425,6 @@ const LoginPage: React.FC<LoginPageProps> = ({
         </div>
       </div>
     </div>
+    </>
   );
 };
-export default LoginPage;
