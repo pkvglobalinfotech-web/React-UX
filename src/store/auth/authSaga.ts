@@ -13,12 +13,31 @@ import {
 
 // API call helper function
 const loginApi = (data: LoginPayload): Promise<AxiosResponse<LoginSuccessPayload>> => {
+  console.log('========== LOGIN API CALL ==========');
+
+  console.log('[1] Login API payload:', data);
+
+  console.log(
+    '[2] Login API endpoint:',
+    API_ENDPOINTS.AUTH.LOGIN
+  );
+
+  console.log('[3] axiosClient:', axiosClient);
   return axiosClient.post(API_ENDPOINTS.AUTH.LOGIN, data);
 };
 
 // Worker Saga: executed when loginRequest action is captured
 function* handleLogin(action: PayloadAction<LoginPayload>): Generator<any, void, AxiosResponse<LoginSuccessPayload>> {
   try {
+    // ----------------------------------------------------------
+    // 1. LOGIN REQUEST ACTION
+    // ----------------------------------------------------------
+
+    console.log('[4] loginRequest action received');
+
+    console.log('[5] Action:', action);
+
+    console.log('[6] Action payload:', action.payload);
     const response: AxiosResponse<LoginSuccessPayload> = yield call(loginApi, action.payload);
     const { token, user } = response.data;
 
