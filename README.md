@@ -73,3 +73,13 @@ export default defineConfig([
   },
 ])
 ```
+## STTEPS TO RUN THE APPLICATION
+
+To install dependencies run the below Command
+# npm install
+
+Run API Initially
+# Navigate to api folder and run npm run
+# Then run npm start
+To run the application run the below command
+# npm start

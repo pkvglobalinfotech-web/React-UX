@@ -83,6 +83,15 @@ body {
   margin: 0;
 }
 
+.dashboard-sidebar-items {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.dashboard-sidebar-items::-webkit-scrollbar {
+  display: none;
+}
+
 h1,
 h2 {
   font-family: var(--heading);
