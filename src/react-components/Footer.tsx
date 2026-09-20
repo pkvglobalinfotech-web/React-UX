@@ -12,6 +12,7 @@ export const Footer = ({ email, phone, facilityName }: FooterProps) => (
       display: 'grid',
       gridTemplateColumns: '1fr auto 1fr',
       alignItems: 'center',
+      flexShrink: 0,
       gap: spacing.md,
       padding: `${spacing.md} ${spacing.lg}`,
       borderTop: `1px solid ${colors.border}`,

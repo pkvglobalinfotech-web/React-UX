@@ -10,9 +10,9 @@ function AppContent() {
   const isLoginPage = location.pathname === '/';
 
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff' }}>
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', backgroundColor: '#ffffff', overflow: 'hidden' }}>
       {!isLoginPage && <Header facilityName={facilityConfig.name} />}
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, minHeight: 0, overflowY: 'auto' }}>
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/dashboard" element={<Dashboard />} />
