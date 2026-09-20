@@ -5,6 +5,7 @@ export interface DashboardItemProps {
   icon: ReactNode;
   header: string;
   description: string;
+  onClick?: () => void;
   width?: CSSProperties['width'];
   className?: string;
   style?: CSSProperties;
@@ -14,6 +15,7 @@ export const DashboardItem = ({
   icon,
   header,
   description,
+  onClick,
   width = '160px',
   className,
   style,
@@ -27,7 +29,14 @@ export const DashboardItem = ({
       flexDirection: 'column',
       alignItems: 'center',
       textAlign: 'center',
+      cursor: onClick ? 'pointer' : 'default',
       ...style,
+    }}
+    onClick={onClick}
+    role={onClick ? 'button' : undefined}
+    tabIndex={onClick ? 0 : undefined}
+    onKeyDown={(event) => {
+      if (onClick && (event.key === 'Enter' || event.key === ' ')) onClick();
     }}
   >
     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '30px', marginBottom: '7px' }}>
