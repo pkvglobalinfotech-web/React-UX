@@ -3,15 +3,10 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import { store } from './store';
+import App from './App';
 
 // Core Services
 import './services/apiService';
-
-// Primary Default Entry Component
-import { LoginPage } from './react-components/LoginPage';
-
-
-// --- Mount Default Application View ---
 
 const rootElement = document.getElementById('root');
 
@@ -20,7 +15,7 @@ if (rootElement) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <LoginPage />
+        <App />
       </Provider>
     </React.StrictMode>
   );

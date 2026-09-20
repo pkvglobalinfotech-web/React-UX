@@ -11,52 +11,51 @@
 // ─────────────────────────────────────────────────────────────
 export const colors = {
   // Brand — Primary Blue
-  // Brand — Primary Blue
- primary:       '#844fc1',
-  primaryHover:  '#723fb0',
-  primaryActive: '#60319a',
-  primaryLight:  '#f3ebfb',
-  primaryMid:    '#d6bdf2',
+  primary:       '#1769AA',
+  primaryHover:  '#125A91',
+  primaryActive: '#0D4773',
+  primaryLight:  '#EAF5FC',
+  primaryMid:    '#9DCCEA',
 
-  // Brand — Accent Indigo
-  accent:        '#4f46e5',
-  accentHover:   '#4338ca',
-  accentLight:   '#eef2ff',
+  // Brand — Accent Blue / Teal
+  accent:        '#2196D3',
+  accentHover:   '#197DB5',
+  accentLight:   '#E8F6FD',
 
-  // Brand — Gold / Amber
-  gold:          '#d97706',
-  goldHover:     '#b45309',
-  goldLight:     '#fef3c7',
+  // Brand — Healthcare Green
+  gold:          '#20A779',
+  goldHover:     '#168B64',
+  goldLight:     '#E8F8F2',
 
   // Sidebar & Shell
-  sidebarBg:     '#0f172a', // Slate 900
-  sidebarTop:    '#1e293b', // Slate 800
-  sidebarBottom: '#0f172a', // Slate 900
-  sidebarText:   '#94a3b8', // Slate 400
-  sidebarMuted:  '#64748b', // Slate 500
-  sidebarBorder: '#334155', // Slate 700
-  sidebarActive: 'rgba(56, 189, 248, 0.12)',
-  sidebarActiveBar: '#38bdf8', // Sky 400
+  sidebarBg:     '#0E4F78',
+  sidebarTop:    '#14648F',
+  sidebarBottom: '#0B3D5C',
+  sidebarText:   '#D6EDF8',
+  sidebarMuted:  '#9FC4D8',
+  sidebarBorder: '#246B91',
+  sidebarActive: 'rgba(33, 150, 211, 0.18)',
+  sidebarActiveBar: '#42B5E8',
 
   // Neutrals — Slate scale
-  textMain:      '#0f172a',
-  textBody:      '#1e293b',
-  textMuted:     '#475569',
-  textSubtle:    '#94a3b8',
-  textDisabled:  '#cbd5e1',
+  textMain:      '#17324D',
+  textBody:      '#29465B',
+  textMuted:     '#60798C',
+  textSubtle:    '#91A5B3',
+  textDisabled:  '#B8C7D1',
   textInverse:   '#ffffff',
 
-  border:        '#e2e8f0',
-  borderStrong:  '#cbd5e1',
-  borderFocus:   '#2563eb',
+  border:        '#D5E4EC',
+  borderStrong:  '#BBD2DF',
+  borderFocus:   '#2196D3',
 
   surface:       '#ffffff',
-  surfaceMuted:  '#f8fafc',
-  surfaceSunken: '#f1f5f9',
+  surfaceMuted:  '#F4F9FC',
+  surfaceSunken: '#EAF3F8',
   surfaceRaised: '#ffffff',
 
-  overlay:       'rgba(15,23,42,0.5)',
-  overlayLight:  'rgba(15,23,42,0.08)',
+  overlay:       'rgba(14,79,120,0.5)',
+  overlayLight:  'rgba(14,79,120,0.08)',
 
   // Semantics & Charts retain system standards...
 
